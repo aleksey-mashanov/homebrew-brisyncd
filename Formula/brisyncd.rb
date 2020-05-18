@@ -5,6 +5,12 @@ class Brisyncd < Formula
   sha256 "1c8205ea36acace9b9b8ada18a198b2e758bb510244ce3e0ecd09db92c962859"
   head "https://github.com/aleksey-mashanov/brisyncd.git"
 
+  bottle do
+    root_url "https://dl.bintray.com/aleksey-mashanov/bottles-brisyncd"
+    cellar :any_skip_relocation
+    sha256 "da223fc5ac7a3a57492085a8deaef88b5bc7fa5db808139f0e7791e8b9c29320" => :catalina
+  end
+
   depends_on :xcode => :build
 
   def install
