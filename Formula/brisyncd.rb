@@ -1,8 +1,9 @@
 class Brisyncd < Formula
-  desc "Synchronize the brightness of an external display with a main (integrated) display"
+  desc "Synchronize brightness of external display with main display"
   homepage "https://github.com/aleksey-mashanov/brisyncd"
   url "https://github.com/aleksey-mashanov/brisyncd/archive/v1.0.0.tar.gz"
   sha256 "1c8205ea36acace9b9b8ada18a198b2e758bb510244ce3e0ecd09db92c962859"
+  head "https://github.com/aleksey-mashanov/brisyncd.git"
 
   depends_on :xcode => :build
 
@@ -11,6 +12,8 @@ class Brisyncd < Formula
     path = `swift build -c release --show-bin-path`.chomp
     sbin.install "#{path}/brisyncd"
   end
+
+  plist_options :manual => "brisyncd"
 
   def plist
     <<~EOS
