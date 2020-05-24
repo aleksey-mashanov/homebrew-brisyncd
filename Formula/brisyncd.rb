@@ -1,14 +1,14 @@
 class Brisyncd < Formula
   desc "Synchronize brightness of external display with main display"
   homepage "https://github.com/aleksey-mashanov/brisyncd"
-  url "https://github.com/aleksey-mashanov/brisyncd/archive/v1.0.0.tar.gz"
-  sha256 "1c8205ea36acace9b9b8ada18a198b2e758bb510244ce3e0ecd09db92c962859"
+  url "https://github.com/aleksey-mashanov/brisyncd/archive/v1.1.0.tar.gz"
+  sha256 "d163f2e37627e61c14dbbea503e18b7e14c5848254f8ec0b40bdbd027f32def0"
   head "https://github.com/aleksey-mashanov/brisyncd.git"
 
   bottle do
     root_url "https://dl.bintray.com/aleksey-mashanov/bottles-brisyncd"
     cellar :any_skip_relocation
-    sha256 "da223fc5ac7a3a57492085a8deaef88b5bc7fa5db808139f0e7791e8b9c29320" => :catalina
+    sha256 "0c9477a47a45588ab4590a328e6a1a8a2cc46a2860d6a4b566b591d67187b2e6" => :catalina
   end
 
   depends_on :xcode => :build
