@@ -1,20 +1,21 @@
 class Brisyncd < Formula
   desc "Synchronize brightness of external display with main display"
   homepage "https://github.com/aleksey-mashanov/brisyncd"
-  url "https://github.com/aleksey-mashanov/brisyncd/archive/v1.1.0.tar.gz"
-  sha256 "d163f2e37627e61c14dbbea503e18b7e14c5848254f8ec0b40bdbd027f32def0"
+  url "https://github.com/aleksey-mashanov/brisyncd/archive/v1.2.0.tar.gz"
+  sha256 "fa9aebf69ca7ad0a951c04670d511fe445cfd16266706829e580ac05ac6402b5"
   head "https://github.com/aleksey-mashanov/brisyncd.git"
+  license "MIT"
 
   bottle do
     root_url "https://dl.bintray.com/aleksey-mashanov/bottles-brisyncd"
     cellar :any_skip_relocation
-    sha256 "0c9477a47a45588ab4590a328e6a1a8a2cc46a2860d6a4b566b591d67187b2e6" => :catalina
+    sha256 "50c8978404f9b36adb9dbd3303b2c371e55d5eff31b69c3b79192668e06eaf0f" => :catalina
   end
 
   depends_on :xcode => :build
 
   def install
-    system "swift", "build", "-c", "release"
+    system "swift", "build", "--disable-sandbox", "-c", "release"
     path = `swift build -c release --show-bin-path`.chomp
     sbin.install "#{path}/brisyncd"
   end
